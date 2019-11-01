@@ -71,23 +71,23 @@ h1, h2, h3, h4, h5 {
 	margin: 0;
  	max-width: 100%;
 	/* border: 1px solid grey !important; */
-  }
+}
 
 .nav {
-	width: 100%;
+	width: 100% !important;
+	position: fixed;	
 	display: flex;
-	justify-content: space-evenly; 
+	line-height: 1.5rem;
+	justify-content: space-around; 
 	background-color: dodgerblue;
-	margin: 0 10px 0 0;
-	border: 3px solid orange;
-}
-.navbar {
-	display: block-inline;
-	margin: 8px;
 }
 
-body {
-	margin: 0 10%;
+.navbar {
+	padding: .3rem 0;
+}
+
+.container {
+	margin: 0 5%;
 	font-size: 1.5em;
 }
 
@@ -161,8 +161,8 @@ hr {
 
 .services_header {
 	width: 100%;
-	margin: 1% 0 0 0;
 }
+
 h1 {
 	font-size: 40px;
 }
@@ -181,15 +181,17 @@ h1 {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+	max-width: 100%;
 
 }
 
 .gridbox{
 	/* display: flex; */
 	border: 1px solid black;
-	background-color: lightgrey;
-	max-width: 48%;
-	margin: 4% 0 0 0;
+	background-color: rgb(140, 174, 207);
+	flex-wrap: wrap;
+	max-width: 40%;
+	margin: 4% 5%;
 	padding: 2%;
 }
 
@@ -228,17 +230,184 @@ h1 {
 
 
 /* MEDIA QUIERIES */
+/* service page */
 
 /* mobiles */
- @media screen 
-  and (max-device-width: 450px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
+ @media (max-width: 450px)  { 
+
+	.nav {
+		overflow: hidden;
+		padding: 10px 10px; /* Large padding which will shrink on scroll (using JS) */
+		flex-flow: row wrap;
+		transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+		width: 100%;
+		top: 0; /* At the top */
+		z-index: 99;
+	}
+
+	.intro {
+		margin: 45% 0 5% 0;
+		text-align: center;
+	}
+
+	.logo {
+		width: 100%;
+	}
+	
+	.navbar {
+		width: 30%;
+		order: 1;
+		text-align: center;
+		font-size: .8rem;
+		margin: 0 auto;
+		color: white;
+	}
+
+	.services_header{
+		display: none;
+	}
+
+	hr {
+		display: none;
+	}
+
+	.service_grid {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.gridbox{
+		max-width: 80%;
+		background-color: rgb(140, 174, 207);
+
+	}
+
+	.facts {
+		flex-direction: column;
+		align-items: center;
+		background-image: url("/great-idea/img/services-info.png");
+		opacity: .3;
+	}
+	.facts div {
+		color:dodgerblue;
+		font-weight: bold;
+	}
+	.services_facts {
+		display: none;
+	}
+	
+	.copyright {
+		background-color: dodgerblue;
+	}
 
 }
 
 
 /* tablets */
-@media screen 
-and (max-device-width: 768px) { 
+@media (min-width: 750px) and (max-width: 1079px) { 
+
+	.nav {
+		overflow: hidden;
+		padding: 10px 10px; /* Large padding which will shrink on scroll (using JS) */
+		flex-flow: row wrap;
+		transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+		width: 100%;
+		top: 0; /* At the top */
+		z-index: 99;
+	}
+
+	.intro {
+		margin: 0% 0 5% 0;
+		text-align: center;
+	}
+
+	.navbar {
+		text-align: center;
+		font-size: .8rem;
+		margin: 0 auto;
+		color: white;
+	}
+
+	.service_grid {
+		justify-content: space-evenly;
+		margin: 2% 2%;
+	}
+
+	.gridbox{
+		max-width: 42%;
+		background-color: rgb(140, 174, 207);
+		margin: 2% 0%;
+
+	}
+
+	.facts {
+		
+	}
+	.facts div {
+		font-weight: bold;
+	}
+	
+	.copyright {
+		background-color: dodgerblue;
+	}
 
 }
+
+/* computers */
+/* @media (min-width: 1080px) { 
+
+	.intro {
+		margin: % 0 5% 0;
+		text-align: center;
+		font-size: 2em;
+	}
+
+	.logo {
+		width: 100%;
+	}
+	
+	.navbar {
+		width: 30%;
+		order: 1;
+		text-align: center;
+		font-size: .8rem;
+		margin: 0 auto;
+		color: white;
+	}
+
+	
+
+	hr {
+		display: none;
+	}
+
+	.service_grid {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.gridbox{
+		max-width: 80%;
+		background-color: rgb(140, 174, 207);
+
+	}
+
+	.facts {
+		flex-direction: column;
+		align-items: center;
+		background-image: url("/great-idea/img/services-info.png");
+		opacity: .3;
+	}
+	.facts div {
+		color:dodgerblue;
+		font-weight: bold;
+	}
+	.services_facts {
+		display: none;
+	}
+	
+	.copyright {
+		background-color: dodgerblue;
+	}
+
+} */
